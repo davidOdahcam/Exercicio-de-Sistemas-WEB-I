@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="form" action="/" method="post" enctype="multipart/form-data">
+            <header class="content-header">
+                <h2 class="content-header-title">Formulário de cadastro</h2>
+            </header>
+            
+            <% if (typeof message !== "undefined") { %>
+                <div class="alert alert-<%= message.type %>" role="alert">
+                    <%= message.text %>
+                </div>
+            <% } %>
+
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" name="name" id="name" class="form-control" <% if (typeof old !== "undefined") { %>value="<%= old.name %>"<% } %> placeholder="Digite seu nome" required/>
+                <% if (typeof errors !== "undefined" && errors.name) { %><small id="name_help" class="text-danger"><%= errors.name %></small><% } %>
+            </div>
+
+            <div class="form-group">
+                <label for="username">Nome de usuário</label>
+                <input type="text" name="username" id="username" class="form-control" <% if (typeof old !== "undefined") { %>value="<%= old.username %>"<% } %> placeholder="Digite seu nome" required/>
+                <% if (typeof errors !== "undefined" && errors.username) { %><small id="username_help" class="text-danger"><%= errors.username %></small><% } %>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class="form-control" <% if (typeof old !== "undefined") { %>value="<%= old.email %>"<% } %> placeholder="Digite seu email" required/>
+                <% if (typeof errors !== "undefined" && errors.email) { %><small id="email_help" class="text text-danger"><%= errors.email %></small><% } %>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <input type="password" name="password" id="password" class="form-control" <% if (typeof old !== "undefined") { %>value="<%= old.password %>"<% } %> placeholder="********" required/>
+                <% if (typeof errors !== "undefined" && errors.password) { %><small id="password_help" class="text text-danger"><%= errors.password %></small><% } %>
+            </div>
+            
+            <div class="form-group">
+                <label for="birthdate">Data de nascimento</label>
+                <input type="date" name="birthdate" id="birthdate" class="form-control" <% if (typeof old !== "undefined") { %>value="<%= old.birthdate %>"<% } %> placeholder="DD/MM/AAAA"  required/>
+                <% if (typeof errors !== "undefined" && errors.birthdate) { %><small id="birthdate_help" class="text text-danger"><%= errors.birthdate %></small><% } %>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Telefone</label>
+                <input type="tel" name="phone" id="phone" class="form-control" <% if (typeof old !== "undefined") { %>value="<%= old.phone %>"<% } %> placeholder="Digite seu telefone" required/>
+                <% if (typeof errors !== "undefined" && errors.phone) { %><small id="phone_help" class="text text-danger"><%= errors.phone %></small><% } %>
+            </div>
+            
+            <div class="form-group">
+                <label for="picture">Foto</label>
+                <div class="custom-file">
+                    <input type="file" name="picture" id="picture" class="custom-file-input" accept=".jpg, .jpeg, .png">
+                    <label class="custom-file-label" for="picture">Selecionar arquivo...</label>
+                    <% if (typeof errors !== "undefined" && errors.picture) { %><small id="picture_help" class="text text-danger"><%= errors.picture %></small><% } %>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-dark btn-lg btn-block mt-4">Cadastrar</button>
+        </form>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
