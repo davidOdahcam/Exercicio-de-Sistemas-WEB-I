@@ -1,4 +1,4 @@
-## EXERCÍCIO DE SISTEMAS DE WEB 1
+## EXERCÍCIO DE SISTEMAS WEB 1
 
 <strong>Propósito:</strong>
 Este repositório trata-se de um exercício de Sistemas WEB I realizado em 2021. Nele, foi criado um servidor que realiza funções de cadastro de usuário baseado em Node.js.
